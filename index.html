@@ -1,0 +1,1908 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes">
+    <title>MedPlex MDCAT Preparation Academy | Computerized Assessment</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- KaTeX for equation rendering (kept for compatibility) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+        onload="renderMathInElement(document.body, {
+            delimiters: [
+                {left: '$$', right: '$$', display: true},
+                {left: '$', right: '$', display: false},
+                {left: '\\(', right: '\\)', display: false},
+                {left: '\\[', right: '\\]', display: true}
+            ]
+        });"></script>
+    <style>
+        /* ========== EXACT UI FROM ORIGINAL FILE – PRESERVED ========== */
+        :root {
+            --primary-blue: #0c343d;
+            --secondary-blue: #134f5c;
+            --dark-blue: #0c343d;
+            --light-blue: #e0f2fe;
+            --accent-green: #10b981;
+            --accent-orange: #f59e0b;
+            --accent-red: #ef4444;
+            --accent-purple: #8b5cf6;
+            --accent-pink: #ec4899;
+            --accent-teal: #14b8a6;
+            --accent-yellow: #fbbf24;
+            --accent-amber: #f59e0b;
+            --vibrant-blue: #3b82f6;
+            --vibrant-green: #22c55e;
+            --vibrant-purple: #a855f7;
+            --vibrant-pink: #e879f9;
+            --gradient-blue: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            --gradient-green: linear-gradient(135deg, var(--accent-green), #34d399);
+            --gradient-orange: linear-gradient(135deg, var(--accent-orange), #f97316);
+            --gradient-red: linear-gradient(135deg, var(--accent-red), #f87171);
+            --gradient-purple: linear-gradient(135deg, var(--accent-purple), #a78bfa);
+            --gradient-pink: linear-gradient(135deg, var(--accent-pink), #f472b6);
+            --gradient-teal: linear-gradient(135deg, var(--accent-teal), #2dd4bf);
+            --gradient-yellow: linear-gradient(135deg, var(--accent-yellow), #f59e0b);
+            --gradient-vibrant: linear-gradient(135deg, #0c343d, #134f5c, #20124d);
+            --shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 2px 5px rgba(0, 0, 0, 0.08);
+            --shadow-xl: 0 5px 15px -3px rgba(0, 0, 0, 0.1);
+            --parser-primary: #2563eb;
+            --parser-secondary: #3b82f6;
+            --parser-success: #10b981;
+            --parser-light: #f8fafc;
+            --parser-bg: #f0f9ff;
+            --parser-card: #ffffff;
+            --parser-text: #1e40af;
+            --parser-border: 0.75px solid #ddd;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+        }
+
+        input, textarea, .btn, .question-nav-item, .option {
+            user-select: text;
+            -webkit-user-select: text;
+            -ms-user-select: text;
+        }
+
+        .question-text, .reasoning, .all-mcq-item, .all-mcq-option, .all-mcq-reasoning,
+        .promo-banner p, .promo-banner h2, .quiz-info, .timer, .result-card, .submission-message p {
+            user-select: none;
+            -webkit-user-select: none;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 6px;
+            color: #0c343d;
+            font-size: 8.25px;
+            overflow-x: hidden;
+        }
+
+        body.laptop-view {
+            font-size: 12.375px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .device-toggle {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            z-index: 1000;
+            background: var(--gradient-purple);
+            color: white;
+            border: none;
+            border-radius: 30px;
+            padding: 6px 12px;
+            font-size: 0.7rem;
+            cursor: pointer;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid rgba(255,255,255,0.3);
+            opacity: 0.9;
+            transition: opacity 0.2s;
+        }
+        .device-toggle:hover { opacity: 1; }
+
+        .logo { text-align: center; margin-bottom: 9px; }
+        .logo h1 {
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: var(--dark-blue);
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.08);
+            margin-bottom: 1.5px;
+            background: var(--gradient-vibrant);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .logo p {
+            color: var(--primary-blue);
+            font-weight: 600;
+            font-size: 0.525rem;
+        }
+
+        .page {
+            background: white;
+            border-radius: 9px;
+            padding: 9px;
+            box-shadow: var(--shadow-xl);
+            width: 100%;
+            display: none;
+            position: relative;
+            border: 1px solid rgba(255,255,255,0.2);
+            background: linear-gradient(to bottom right, rgba(255,255,255,0.9), rgba(255,255,255,0.7));
+            backdrop-filter: blur(10px);
+        }
+        .active { display: block; animation: fadeIn 0.3s ease; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+
+        .promo-banner {
+            background: var(--gradient-vibrant);
+            color: white;
+            padding: 11.25px;
+            border-radius: 7.5px;
+            margin-bottom: 11.25px;
+            text-align: center;
+            font-size: 0.45rem;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            overflow: hidden;
+        }
+        .promo-banner::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(45deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%);
+            z-index: 1;
+        }
+        .promo-banner h2 { font-size: 0.675rem; margin-bottom: 6px; color: white; text-shadow: 1px 1px 2px rgba(0,0,0,0.2); position: relative; z-index: 2; }
+        .promo-banner p { line-height: 1.5; text-align: justify; position: relative; z-index: 2; }
+
+        .form-group { margin-bottom: 6px; }
+        .form-label { display: block; margin-bottom: 1.5px; font-weight: 600; color: var(--dark-blue); font-size: 0.525rem; }
+        .form-input, .form-select {
+            width: 100%; padding: 4.5px 6.75px; border: 1.5px solid var(--light-blue); border-radius: 3.75px;
+            font-size: 0.525rem; background: #f8fafc; transition: all 0.2s;
+        }
+        .form-input:focus, .form-select:focus {
+            outline: none; border-color: var(--primary-blue); box-shadow: 0 0 0 2px rgba(12,52,61,0.15);
+        }
+        .input-container { position: relative; }
+        .password-container .form-input { padding-right: 22.5px; }
+        .input-icon { position: absolute; right: 7.5px; top: 50%; transform: translateY(-50%); color: var(--primary-blue); font-size: 0.525rem; cursor: pointer; }
+
+        .btn {
+            display: inline-flex; align-items: center; justify-content: center; padding: 4.5px 7.5px; border: none;
+            border-radius: 6px; font-weight: 700; font-size: 0.525rem; cursor: pointer; transition: all 0.2s;
+            text-decoration: none; gap: 3px; width: 100%; box-shadow: var(--shadow); position: relative; overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.1);
+        }
+        .btn::before {
+            content: ""; position: absolute; top: 0; left: -100%; width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent); transition: left 0.5s;
+        }
+        .btn:hover::before { left: 100%; }
+
+        .btn-primary { background: var(--gradient-blue); color: white; }
+        .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 2px 4px rgba(12,52,61,0.2); }
+
+        /* WhatsApp button – exact colors from New Frontend */
+        .btn-whatsapp {
+            background: linear-gradient(135deg, #25d366, #128c7e);
+            color: white;
+        }
+        .btn-whatsapp:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 2px 4px rgba(37, 211, 102, 0.2);
+        }
+
+        .btn-purple { background: var(--gradient-purple); color: white; }
+        .btn-purple:hover { transform: translateY(-1px); box-shadow: 0 2px 4px rgba(139,92,246,0.2); }
+        .btn-red { background: var(--gradient-red); color: white; }
+        .btn-red:hover { transform: translateY(-1px); box-shadow: 0 2px 4px rgba(239,68,68,0.2); }
+        .btn-gold { background: linear-gradient(135deg, #f59e0b, #d97706); color: white; }
+        .btn-gold:hover { transform: translateY(-1px); box-shadow: 0 2px 4px rgba(245,158,11,0.2); }
+
+        /* Quiz notification */
+        .quiz-notification {
+            position: fixed; top: 15px; right: 15px; background: white; padding: 11.25px; border-radius: 7.5px;
+            box-shadow: var(--shadow-xl); z-index: 1000; display: none; max-width: 225px;
+            border-left: 3.75px solid var(--accent-green); animation: slideInRight 0.3s ease; transform: translateX(100%);
+        }
+        .quiz-notification.show { display: block; transform: translateX(0); }
+        .quiz-notification.warning { border-left-color: var(--accent-orange); }
+        .quiz-notification.error { border-left-color: var(--accent-red); }
+        .quiz-notification-content { display: flex; flex-direction: column; gap: 7.5px; }
+        .quiz-notification-title { font-weight: 700; font-size: 0.6rem; color: var(--dark-blue); }
+        .quiz-notification-message { font-size: 0.525rem; color: #4b5563; }
+        .quiz-notification-actions { display: flex; gap: 6px; justify-content: flex-end; }
+        .quiz-notification-btn { padding: 3px 6px; border-radius: 3px; font-size: 0.4875rem; font-weight: 600; cursor: pointer; border: none; transition: all 0.2s; border: 1px solid rgba(0,0,0,0.1); }
+        .quiz-notification-btn.primary { background: var(--gradient-blue); color: white; }
+        .quiz-notification-btn.secondary { background: #f3f4f6; color: #4b5563; }
+        @keyframes slideInRight { from { transform: translateX(100%); } to { transform: translateX(0); } }
+
+        .main-page-buttons { display: grid; gap: 6px; margin-top: 9px; }
+        .quiz-access-section { display: none; flex-direction: column; gap: 6px; margin-top: 9px; }
+
+        .quiz-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 6px; padding-bottom: 4.5px; border-bottom: 1.5px solid var(--light-blue); }
+        .quiz-title-container { display: flex; flex-direction: column; gap: 2.25px; width: 80%; }
+        .quiz-info { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; font-size: 0.525rem; color: var(--dark-blue); font-weight: 600; }
+        .timer-container { display: flex; gap: 4.5px; justify-content: flex-end; width: 100%; margin-bottom: 6px; }
+        .timer.total-timer { background: var(--gradient-orange); color: white; padding: 2.25px 4.5px; border-radius: 7.5px; font-weight: 700; font-size: 0.525rem; box-shadow: var(--shadow); white-space: nowrap; border: 1px solid rgba(0,0,0,0.1); }
+        .progress-container { width: 100%; height: 4.5px; background: #e5e7eb; border-radius: 2.25px; overflow: hidden; margin-bottom: 6px; box-shadow: var(--shadow); }
+        .progress-bar { height: 100%; border-radius: 2.25px; transition: width 0.4s ease; background: var(--gradient-vibrant); }
+        .question-nav { display: grid; grid-template-columns: repeat(auto-fill, minmax(10.5px, 1fr)); gap: 2.25px; margin-bottom: 6px; }
+        .question-nav-item { width: 10.5px; height: 10.5px; display: flex; align-items: center; justify-content: center; border-radius: 2.25px; font-weight: 700; font-size: 0.375rem; cursor: pointer; background: white; border: 1.5px solid var(--light-blue); transition: all 0.2s; }
+        .question-nav-item.current { background: var(--gradient-vibrant); color: white; border-color: var(--primary-blue); transform: scale(1.1); }
+        .question-nav-item.solved { background: var(--gradient-green); color: white; border-color: var(--accent-green); }
+        .question-nav-item.visited { background: var(--gradient-orange); color: white; border-color: var(--accent-orange); }
+        .question-container { margin-bottom: 6px; }
+        .question-text { font-size: 0.5625rem; font-weight: 700; margin-bottom: 4.5px; color: var(--dark-blue); }
+        .options-container { display: grid; grid-template-columns: 1fr; gap: 3px; margin-bottom: 6px; }
+        .option { padding: 3.75px 6px; border: 1.5px solid var(--light-blue); border-radius: 3.75px; cursor: pointer; transition: all 0.2s; font-weight: 500; background: #f8fafc; font-size: 0.525rem; position: relative; }
+        .option:hover { border-color: var(--primary-blue); background: #e0f2fe; transform: translateY(-1px); }
+        .option.selected { border-color: var(--primary-blue); background: #dbeafe; }
+        .reasoning { background: #f8fafc; border-radius: 3.75px; padding: 6px; margin-top: 6px; display: none; border-left: 2.25px solid var(--primary-blue); font-size: 0.525rem; }
+        .reasoning-title { font-weight: 700; margin-bottom: 3px; color: var(--dark-blue); font-size: 0.5625rem; }
+        .navigation-buttons { display: flex; flex-direction: column; gap: 3px; margin-top: 9px; }
+        .nav-btn { padding: 3.75px 5.25px; border-radius: 3.75px; font-weight: 600; cursor: pointer; border: none; transition: all 0.2s; font-size: 0.525rem; display: flex; align-items: center; gap: 2.25px; justify-content: center; width: 100%; border: 1px solid rgba(0,0,0,0.1); }
+        .btn-back { background: linear-gradient(135deg, #3b82f6, #60a5fa); color: white; }
+        .btn-next { background: linear-gradient(135deg, #1d4ed8, #3b82f6); color: white; }
+        .btn-reasoning { background: var(--gradient-purple); color: white; }
+        .btn-reasoning.disabled { background: #6b7280; color: white; cursor: not-allowed; opacity: 0.6; }
+        .btn-submit { background: var(--gradient-green); color: white; }
+
+        /* Results page – new style from New Frontend */
+        .results-header-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 3.75px;
+            margin-bottom: 9px;
+        }
+        .results-header-buttons .btn {
+            padding: 3px 4.5px;
+            font-size: 0.4875rem;
+            width: 100%;
+            border: 1px solid rgba(0,0,0,0.1);
+        }
+        .submission-message {
+            background: linear-gradient(135deg, #f8fafc, #e0f2fe);
+            border-radius: 6px;
+            padding: 18px;
+            text-align: center;
+            margin-bottom: 9px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--accent-green);
+        }
+        .submission-message h2 {
+            font-size: 0.9rem;
+            margin-bottom: 9px;
+            color: var(--accent-green);
+        }
+        .submission-message p {
+            font-size: 0.6rem;
+            margin-bottom: 6px;
+            color: var(--dark-blue);
+        }
+        .submission-icon {
+            font-size: 2.25rem;
+            color: var(--accent-green);
+            margin-bottom: 9px;
+        }
+        .result-card {
+            background: linear-gradient(135deg, #f8fafc, #e0f2fe);
+            border-radius: 6px;
+            padding: 9px;
+            text-align: center;
+            margin-bottom: 9px;
+            box-shadow: var(--shadow);
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.1);
+        }
+        .result-card::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; height: 3px;
+            background: var(--gradient-vibrant);
+        }
+        .result-card h2 { font-size: 0.675rem; margin-bottom: 6px; color: var(--dark-blue); }
+        .result-card table { width: 100%; border-collapse: collapse; font-size: 0.525rem; margin-top: 6px; box-shadow: var(--shadow); }
+        .result-card th, .result-card td { padding: 3.75px; border: 1px solid #dbeafe; text-align: left; }
+        .result-card th { background-color: var(--light-blue); font-weight: 600; }
+        .result-card td { background-color: #f8fafc; }
+        .result-actions { display: flex; flex-direction: column; gap: 4.5px; margin-top: 9px; }
+        .result-actions .btn { border: 1px solid rgba(0,0,0,0.1); }
+
+        .all-mcqs-list { display: flex; flex-direction: column; gap: 11.25px; }
+        .all-mcq-item { padding: 7.5px; border: 1px solid var(--light-blue); border-radius: 6px; background: #f8fafc; position: relative; }
+        .all-mcq-item .question-text { color: var(--dark-blue); font-size: 0.6rem; font-weight: 700; }
+        .all-mcq-options { display: flex; flex-direction: column; gap: 3px; margin-top: 4.5px; }
+        .all-mcq-option { font-size: 0.525rem; padding: 3px 4.5px; border-radius: 3px; border: 1px solid #e5e7eb; }
+        .all-mcq-option.correct { background: #d1fae5; color: var(--accent-green); font-weight: 600; border-color: #a7f3d0; }
+        .all-mcq-reasoning { margin-top: 6px; font-size: 0.525rem; color: #4b5563; padding: 6px; background: #f8fafc; border-radius: 3px; border-left: 2.25px solid var(--primary-blue); }
+        .all-mcq-reasoning strong { color: var(--dark-blue); }
+
+        .pagination-controls {
+            display: flex; justify-content: center; align-items: center; gap: 6px; margin: 9px 0;
+        }
+        .pagination-controls .btn-small { width: auto; padding: 2px 6px; font-size: 0.45rem; }
+        .page-indicator { font-size: 0.5rem; font-weight: 600; color: var(--dark-blue); }
+
+        .error-box { background: #fee2e2; color: var(--accent-red); padding: 3.75px 5.25px; border-radius: 2.25px; margin-top: 4.5px; display: none; font-weight: 600; font-size: 0.525rem; border-left: 2.25px solid var(--accent-red); }
+        .info-box { background: #f0f9ff; border-left: 3px solid var(--primary-blue); padding: 6px; margin-bottom: 6px; font-size: 0.4875rem; border-radius: 3px; }
+
+        @media (max-width: 768px) {
+            .quiz-header { flex-direction: column; gap: 4.5px; align-items: flex-start; }
+            .navigation-buttons { grid-template-columns: 1fr; }
+            .timer-container { position: relative; top: auto; right: auto; margin-top: 3.75px; justify-content: flex-end; width: 100%; }
+            .quiz-title-container { width: 100%; }
+            .result-actions { flex-direction: column; }
+            .promo-banner { padding: 9px; }
+            .promo-banner h2 { font-size: 0.6rem; }
+            .promo-banner p { font-size: 0.4125rem; }
+        }
+    </style>
+</head>
+<body>
+    <button class="device-toggle" id="deviceToggle">Switch to Laptop View</button>
+
+    <div class="quiz-notification" id="quiz-notification">
+        <div class="quiz-notification-content">
+            <div class="quiz-notification-title" id="notification-title">Quiz Progress Found</div>
+            <div class="quiz-notification-message" id="notification-message">You have an unfinished quiz. Do you want to continue where you left off?</div>
+            <div class="quiz-notification-actions">
+                <button class="quiz-notification-btn secondary" id="notification-no">Start Fresh</button>
+                <button class="quiz-notification-btn primary" id="notification-yes">Continue</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="logo">
+            <h1>MedPlex MDCAT Preparation Academy</h1>
+            <p>Computerized Assessment System v14.0</p>
+        </div>
+
+        <!-- SIGNIN PAGE (modified: Developer button replaced with WhatsApp) -->
+        <div id="signin-page" class="page active">
+            <div class="promo-banner">
+                <h2><i class="fas fa-graduation-cap"></i> Unlock Your Potential with MedPlex MDCAT Academy</h2>
+                <p>MedPlex Academy is a premier institute for MDCAT preparation, offering cutting-edge computerized assessments that mirror real exam patterns. Our platform provides instant feedback, detailed analytics, and personalized performance reports. With a vast question bank curated by experienced faculty, students gain deep insights into every topic. The academy's adaptive learning technology identifies weak areas and recommends targeted practice. We have helped thousands of aspirants secure top ranks in provincial and national medical entry tests. Join MedPlex today to experience a seamless, tech-driven learning journey that builds confidence and ensures success.</p>
+            </div>
+            
+            <h2><i class="fas fa-lock"></i> Access Portal</h2>
+            <p>Choose an option below</p>
+            
+            <div class="main-page-buttons">
+                <button class="btn btn-primary" onclick="showAllMcqsPage()">
+                    <i class="fas fa-list-alt"></i> <span>View All MCQs</span>
+                </button>
+                <button class="btn btn-primary" onclick="showRegistrationPage()">
+                    <i class="fas fa-user-plus"></i> <span>Sign Up to Get Quiz Access</span>
+                </button>
+                <!-- WhatsApp button replacing Developer Access, exact color and number -->
+                <button class="btn btn-whatsapp" onclick="window.open('https://wa.me/923000047325', '_blank')">
+                    <i class="fab fa-whatsapp"></i> <span>WhatsApp Contact</span>
+                </button>
+            </div>
+            
+            <!-- Developer access form removed entirely -->
+            
+            <!-- Quiz access form (unchanged) -->
+            <div id="quiz-access-form" class="quiz-access-section">
+                <h3><i class="fas fa-key"></i> Enter Quiz Access Code</h3>
+                <div class="password-container input-container">
+                    <input type="password" id="quizAccessCode" class="form-input" placeholder="Enter your MedPlex ID (e.g., MPX-123AB)">
+                    <i class="fas fa-eye-slash input-icon" id="toggleQuizAccessCode"></i>
+                </div>
+                <button class="btn btn-primary" onclick="accessQuiz(document.getElementById('quizAccessCode').value)">
+                    <span>Access Quiz</span> <i class="fas fa-arrow-right"></i>
+                </button>
+                <div id="quiz-error-box" class="error-box">
+                    <i class="fas fa-exclamation-circle"></i> Invalid access code.
+                </div>
+            </div>
+        </div>
+
+        <!-- REGISTRATION PAGE (added Gender dropdown) -->
+        <div id="registration-page" class="page">
+            <div class="promo-banner">
+                <h2><i class="fas fa-graduation-cap"></i> Unlock Your Potential with MedPlex MDCAT Academy</h2>
+                <p>MedPlex Academy is a premier institute for MDCAT preparation, offering cutting-edge computerized assessments that mirror real exam patterns. Our platform provides instant feedback, detailed analytics, and personalized performance reports. With a vast question bank curated by experienced faculty, students gain deep insights into every topic. The academy's adaptive learning technology identifies weak areas and recommends targeted practice. We have helped thousands of aspirants secure top ranks in provincial and national medical entry tests. Join MedPlex today to experience a seamless, tech-driven learning journey that builds confidence and ensures success.</p>
+            </div>
+            
+            <h2><i class="fas fa-user-edit"></i> Student Registration</h2>
+            <p>Please provide your details to register</p>
+            
+            <div class="form-group">
+                <label class="form-label"><i class="fas fa-user"></i> Student Name</label>
+                <input type="text" id="studentName" class="form-input" placeholder="Enter your full name">
+            </div>
+            <div class="form-group">
+                <label class="form-label"><i class="fas fa-user-friends"></i> Father Name</label>
+                <input type="text" id="fatherName" class="form-input" placeholder="Enter your father's name">
+            </div>
+            <!-- Gender dropdown added -->
+            <div class="form-group">
+                <label class="form-label"><i class="fas fa-venus-mars"></i> Gender</label>
+                <select id="gender" class="form-select">
+                    <option value="">Select Gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="form-label"><i class="fas fa-envelope"></i> Email Address</label>
+                <input type="email" id="email" class="form-input" placeholder="Enter your email address">
+            </div>
+            <div class="form-group">
+                <label class="form-label"><i class="fas fa-phone"></i> Mobile Number (WhatsApp)</label>
+                <input type="tel" id="mobile" class="form-input" placeholder="+92XXXXXXXXXX">
+            </div>
+            <div class="form-group">
+                <label class="form-label"><i class="fas fa-city"></i> City / District</label>
+                <input type="text" id="city" class="form-input" placeholder="Enter your city/district">
+            </div>
+            <button class="btn btn-primary" onclick="handleRegistration()">
+                <span>Submit to Get Access to Quiz</span> <i class="fas fa-arrow-right"></i>
+            </button>
+            <button class="btn btn-red" style="margin-top: 3.75px;" onclick="showPage('signin-page')">
+                <i class="fas fa-chevron-left"></i> Back to Home
+            </button>
+        </div>
+
+        <!-- QUIZ PAGE (unchanged) -->
+        <div id="quiz-page" class="page">
+            <div class="promo-banner">
+                <h2><i class="fas fa-graduation-cap"></i> MedPlex MDCAT Academy – Computerized Assessment</h2>
+                <p>MedPlex Academy is a premier institute for MDCAT preparation, offering cutting-edge computerized assessments that mirror real exam patterns. Our platform provides instant feedback, detailed analytics, and personalized performance reports. With a vast question bank curated by experienced faculty, students gain deep insights into every topic. The academy's adaptive learning technology identifies weak areas and recommends targeted practice. We have helped thousands of aspirants secure top ranks in provincial and national medical entry tests. Join MedPlex today to experience a seamless, tech-driven learning journey that builds confidence and ensures success.</p>
+            </div>
+
+            <div class="quiz-header">
+                <div class="quiz-title-container">
+                    <h2 id="quiz-title"></h2>
+                    <div class="quiz-info">
+                        <span><i class="fas fa-book"></i> Subject: <span id="quiz-subject">Biology (MDCAT)</span></span>
+                        <span><i class="fas fa-clock"></i> Total Time: <span id="quiz-duration">40</span> min</span>
+                    </div>
+                </div>
+            </div>
+            <div class="timer-container">
+                <div class="timer total-timer" id="timer">40:00</div>
+            </div>
+
+            <div class="progress-container">
+                <div class="progress-bar" id="quiz-progress"></div>
+            </div>
+
+            <div class="question-nav" id="question-nav"></div>
+            
+            <div class="question-container">
+                <div class="question-text" id="question-text"></div>
+                <div class="options-container" id="options-container"></div>
+                <div class="reasoning" id="reasoning">
+                    <div class="reasoning-title"><i class="fas fa-lightbulb"></i> Explanation:</div>
+                    <div id="reasoning-text"></div>
+                </div>
+            </div>
+            
+            <div class="navigation-buttons">
+                <button class="nav-btn btn-back" onclick="navigateQuestion('prev')">
+                    <i class="fas fa-arrow-left"></i> Back
+                </button>
+                <button class="nav-btn btn-next" onclick="navigateQuestion('next')">
+                    Next <i class="fas fa-arrow-right"></i>
+                </button>
+                <button class="nav-btn btn-reasoning disabled" id="reasoning-btn" onclick="toggleReasoning()">
+                    <i class="fas fa-lightbulb"></i> Explanation
+                </button>
+                <button class="nav-btn btn-submit" onclick="submitTest()">
+                    Submit Test <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- RESULTS PAGE (redesigned to match New Frontend) -->
+        <div id="results-page" class="page">
+            <div class="results-header-buttons">
+                <a id="website-link" href="#" target="_blank" class="btn btn-primary"><i class="fas fa-globe"></i> Website</a>
+                <a id="whatsapp-contact-link" href="#" target="_blank" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp Support</a>
+            </div>
+            
+            <div class="submission-message" id="submission-message">
+                <div class="submission-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h2>Test Submitted Successfully!</h2>
+                <p>Your results have been submitted to our Computerized Assessment System v14.0.</p>
+                <p><strong>Important:</strong> Electronic Detailed Marks Certificate (DMC) has been sent to your registered email.</p>
+                <p><strong>Please Check:</strong> Your Inbox, Spam Folder, and Junk Folder in email</p>
+                <p><strong>Alternative:</strong> Also check WhatsApp messages for results</p>
+                <p>Thank you for taking the test!</p>
+            </div>
+            
+            <div class="result-card">
+                <h2><i class="fas fa-user-graduate"></i> Student Information</h2>
+                <table>
+                    <thead>
+                        <tr><th>Field</th><th>Detail</th></tr>
+                    </thead>
+                    <tbody id="student-info-table"></tbody>
+                </table>
+            </div>
+            
+            <div class="result-actions" id="result-actions">
+                <button class="btn btn-primary" onclick="restartTest()" id="retake-full-btn">
+                    <i class="fas fa-redo"></i> Start New Assessment
+                </button>
+                <button class="btn btn-primary" onclick="viewHistoryPlaceholder()">
+                    <i class="fas fa-history"></i> View Test History
+                </button>
+                <button class="btn btn-primary" onclick="viewLeaderboardPlaceholder()">
+                    <i class="fas fa-trophy"></i> View Leaderboard
+                </button>
+                <button class="btn btn-primary" onclick="showPage('signin-page')">
+                    <i class="fas fa-arrow-left"></i> Back to Home
+                </button>
+            </div>
+        </div>
+
+        <!-- ALL MCQS PAGE (unchanged) -->
+        <div id="all-mcqs-page" class="page">
+            <h2><i class="fas fa-list-alt"></i> All MCQs and Solutions</h2>
+            <div id="all-mcqs-list" class="all-mcqs-list"></div>
+            <div class="pagination-controls" id="mcq-pagination">
+                <button class="btn btn-primary btn-small" id="prevPageBtn" onclick="changeMcqPage(-1)"><i class="fas fa-chevron-left"></i></button>
+                <span class="page-indicator" id="pageIndicator">Page 1 / 1</span>
+                <button class="btn btn-primary btn-small" id="nextPageBtn" onclick="changeMcqPage(1)"><i class="fas fa-chevron-right"></i></button>
+            </div>
+            <button class="btn btn-primary" onclick="showPage('signin-page')" style="margin-top: 9px;">
+                <i class="fas fa-arrow-left"></i> Back to Home
+            </button>
+        </div>
+    </div>
+
+    <script>
+// ****************************************************************
+// NEW APPS SCRIPT URL (provided by user)
+const SHEET_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzRK7ZgatCCu9LZ0fixW_ksyBq_LwKDTFYwVzL2_G9FLPUsmEH-9Y8WsqifzZ_BRbug/exec';
+// ****************************************************************
+
+// ================== MCQ DATA (unchanged) ==================
+const RAW_MCQS = `What is the primary function of the mucus secreted by the mucous membrane in the nasal cavities?
+A) To warm the inhaled air to body temperature
+B) To trap microorganisms and dust, and moisten the air
+C) To produce antibodies against specific pathogens
+D) To constrict the blood capillaries and reduce airflow
+Correct: B
+Reasoning: The mucus and cilia filter the air and prevent the entry of foreign particles such as microorganisms, dust and particulate matter, and the mucus also helps in moistening the air.
+Incorrect1: Warming the air is a function of the underlying blood capillaries.
+Incorrect2: Antibodies are produced by the immune system, not by the mucous membrane for filtration.
+Incorrect3: Mucus does not constrict capillaries; it traps particles.
+---
+How does the structure of the bronchioles contribute to their primary function?
+A) They contain rigid cartilage rings to maintain an open airway
+B) They are lined with thick stratified epithelium for protection
+C) They possess smooth muscle and lack cartilage, allowing them to change diameter
+D) They have a large number of alveolar sacs for gas exchange
+Correct: C
+Reasoning: The bronchioles are approximately 1mm or less in diameter and their walls consist of smooth muscle. They are the first airway branches that do not contain cartilage and are responsible for controlling air distribution by changing diameter.
+Incorrect1: The absence of cartilage is key to their ability to constrict or dilate.
+Incorrect2: They are lined with ciliated cuboidal epithelium, not thick stratified epithelium.
+Incorrect3: Alveolar ducts and alveoli, not the bronchioles themselves, are the sites of gas exchange.
+---
+What is the role of the iron-containing heme group in a haemoglobin molecule?
+A) It binds loosely with oxygen to carry it in the blood
+B) It acts as an enzyme to catalyze carbonic acid formation
+C) It provides structural rigidity to the red blood cell
+D) It binds with carbon dioxide for transport as bicarbonate
+Correct: A
+Reasoning: The iron in the heme group combines loosely with oxygen and in this way oxygen is carried in the blood. At high oxygen concentrations, the pigment combines with oxygen.
+Incorrect1: Carbonic anhydrase, not heme, catalyzes carbonic acid formation.
+Incorrect2: The heme group does not provide structural rigidity.
+Incorrect3: Carbon dioxide is primarily transported as bicarbonate or bound to globin, not to the heme iron.
+---
+What is the key difference in the oxygen-carrying capacity between a molecule of haemoglobin and a molecule of myoglobin?
+A) Haemoglobin can carry four oxygen molecules, while myoglobin can carry one
+B) Myoglobin can carry four oxygen molecules, while haemoglobin can carry one
+C) Both carry the same number of oxygen molecules
+D) Haemoglobin carries oxygen reversibly, while myoglobin carries it irreversibly
+Correct: A
+Reasoning: Each molecule of haemoglobin can bind with four molecules of oxygen to form oxyhaemoglobin. Myoglobin consists of one polypeptide chain and its iron can bind with one molecule of oxygen.
+Incorrect1: Myoglobin carries one oxygen molecule, not four.
+Incorrect2: Their oxygen-carrying capacities are different.
+Incorrect3: Both bind oxygen reversibly, which is a key property of respiratory pigments.
+---
+In the process of carbon dioxide transport, what is the direct consequence of bicarbonate ions diffusing out of the red blood cell?
+A) Oxygen binds more tightly to haemoglobin
+B) Chloride ions diffuse into the red blood cell to maintain electrical balance
+C) The blood plasma becomes more acidic
+D) Carbon dioxide is released from the haemoglobin
+Correct: B
+Reasoning: From inside of the erythrocytes, negatively charged HCO3- ions diffuse to the plasma. This is balanced by the diffusion of chloride ions, Cl-, in the opposite direction, known as the chloride shift.
+Incorrect1: The diffusion of bicarbonate is related to CO2 transport, not directly to O2 binding affinity in this step.
+Incorrect2: The pH is maintained by buffering, not directly by this ion movement causing acidity.
+Incorrect3: CO2 release from haemoglobin (carbaminohaemoglobin) is a separate process.
+---
+What structural feature of the alveoli is directly facilitated by the presence of collagen and elastin proteins?
+A) Efficient diffusion of gases across the thin wall
+B) Prevention of infection by trapping bacteria
+C) Expansion during inhalation and recoil during exhalation
+D) Production of surfactant to reduce surface tension
+Correct: C
+Reasoning: Collagen and elastin proteins are present in the alveolar walls, which allow the alveoli to expand and recoil easily during breathing.
+Incorrect1: Diffusion efficiency is due to the thinness of the squamous epithelium, not collagen/elastin.
+Incorrect2: Bacteria trapping is a function of mucus in the upper airways and surfactant has some bactericidal properties.
+Incorrect3: Surfactant is produced by specialized cells, not by collagen/elastin.
+---
+What is the primary reason the left lung has only two lobes compared to the right lung's three?
+A) The left lung is less functional than the right lung
+B) The heart is located more to the left side, taking up space
+C) The diaphragm is higher on the left side, limiting space
+D) The left main bronchus is shorter, reducing lung tissue development
+Correct: B
+Reasoning: The left lung is smaller in volume because of the asymmetrical position of the heart, which occupies space in the left thoracic cavity.
+Incorrect1: Both lungs are functional; the size difference is due to anatomical space constraints.
+Incorrect2: The diaphragm's position is not the primary reason for the lobe difference.
+Incorrect3: The left main bronchus is longer and more horizontal, but this is not the reason for the lobe number.
+---
+During a forceful inhalation, which set of muscles, besides the diaphragm and external intercostals, might be involved to increase thoracic volume further?
+A) Internal intercostal muscles
+B) Abdominal muscles
+C) Muscles of the neck and back that elevate the rib cage
+D) Muscles of the pelvic floor
+Correct: C
+Reasoning: While the textbook focuses on primary muscles, accessory muscles (like scalenes and sternocleidomastoid) in the neck can contract to further elevate the rib cage during deep or forced inspiration. This is an inference from the concept of active inspiration.
+Incorrect1: Internal intercostals are primarily for forced expiration.
+Incorrect2: Abdominal muscles contract during forceful expiration, not inspiration.
+Incorrect3: Pelvic floor muscles are not involved in breathing mechanics.
+---
+What is the approximate volume of air known as the Inspiratory Reserve Volume (IRV)?
+A) The 500 ml of air inhaled during a normal breath
+B) The 1200 ml of air that can be forcibly exhaled after a normal breath
+C) The 3000 ml of air that can be forcibly inhaled after a normal breath
+D) The 1500 ml of air that remains in the lungs after a forced exhalation
+Correct: C
+Reasoning: The amount of extra air inhaled above tidal volume during a deep breath can be as high as 3000ml, which is the Inspiratory Reserve Volume.
+Incorrect1: 500 ml is Tidal Volume.
+Incorrect2: 1200 ml is Expiratory Reserve Volume.
+Incorrect3: 1500 ml is Residual Volume.
+---
+If the partial pressure of oxygen (PO2) in a tissue is 20 mmHg, what is the state of haemoglobin passing through its capillaries?
+A) It will be 100% saturated with oxygen
+B) It will release a significant amount of its bound oxygen
+C) It will bind more oxygen from the tissue
+D) It will convert entirely to carbaminohaemoglobin
+Correct: B
+Reasoning: At a low partial pressure of oxygen (like 20 mmHg in active tissues), haemoglobin has a lower affinity for oxygen and releases it. The oxygen-haemoglobin dissociation curve shows low saturation at low PO2.
+Incorrect1: 100% saturation occurs at a PO2 of 100 mmHg.
+Incorrect2: Oxygen diffuses from high to low PO2, so it moves from blood to tissue, not the reverse.
+Incorrect3: Carbaminohaemoglobin is for CO2 transport, formed when CO2 binds to globin.
+---
+How does an increase in body temperature affect the oxygen-carrying capacity of blood?
+A) It increases the affinity of haemoglobin for oxygen, holding onto it tighter
+B) It decreases the affinity, facilitating oxygen release to active tissues
+C) It has no effect on the oxygen-haemoglobin binding
+D) It causes haemoglobin to break down, reducing capacity
+Correct: B
+Reasoning: The oxygen carrying capacity is sensitive to environmental conditions like a rise in body temperature, which decreases haemoglobin's affinity for oxygen, promoting its release to tissues where it is needed.
+Incorrect1: Increased temperature decreases, not increases, affinity.
+Incorrect2: It does have a significant effect, as noted in the "Science Titbits".
+Incorrect3: Increased temperature does not cause haemoglobin to break down at physiological ranges.
+---
+What is the function of the dorsal and lateral portions of the breathing centre in the medulla?
+A) They stimulate inspiration and increase breathing rate
+B) They inhibit inspiration and stimulate expiration
+C) They are responsible for voluntary breath-holding
+D) They control the cough and sneeze reflexes
+Correct: B
+Reasoning: The dorsal (top) and lateral (side) portions of the breathing centre inhibit inspiration and stimulate expiration, forming the expiratory centre.
+Incorrect1: This is the function of the ventral (inspiratory) centre.
+Incorrect2: Voluntary control is via the cerebral cortex.
+Incorrect3: While these reflexes involve the medulla, this specific description is for the expiratory centre.
+---
+What happens to the soft palate and uvula during the act of swallowing?
+A) They relax to allow food to pass into the nasopharynx
+B) They elevate to open the Eustachian tubes
+C) They move together to seal off the nasopharynx
+D) They contract to push the bolus into the oropharynx
+Correct: C
+Reasoning: During swallowing the soft palate and uvula move together to close the nasopharynx and prevent food from entering the nasal cavity.
+Incorrect1: They close the nasopharynx, they don't allow food into it.
+Incorrect2: Opening the Eustachian tubes is related to pressure equalization, not swallowing food.
+Incorrect3: Pushing the bolus is a function of the tongue and pharyngeal constrictor muscles.
+---
+In the reaction for the formation of oxyhaemoglobin, what is the role of carbonic anhydrase?
+A) It breaks down oxyhaemoglobin to release oxygen
+B) It is not involved; the reaction is spontaneous
+C) It acts as a catalyst for the reversible binding of oxygen to haemoglobin
+D) It converts oxygen into a form that can bind to heme
+Correct: C
+Reasoning: The binding of oxygen with haemoglobin is a reversible reaction that occurs in the alveoli of the lungs in the presence of enzyme carbonic anhydrase.
+Incorrect1: Carbonic anhydrase is involved in the forward reaction as well.
+Incorrect2: It is involved, as stated in the text.
+Incorrect3: The enzyme does not chemically convert oxygen.
+---
+What is the approximate total surface area of the alveoli in the human lungs?
+A) 1-2 square meters
+B) 10-20 square meters
+C) 70-90 square meters
+D) 200-300 square meters
+Correct: C
+Reasoning: There are about 700 million alveoli present in the lungs, representing approximately a total surface area of 70-90m².
+Incorrect1: This is far too small for the required gas exchange.
+Incorrect2: This is also an underestimation of the alveolar surface area.
+Incorrect3: This is an overestimation; the text gives a specific range.
+---
+Why is a good blood supply essential for a respiratory surface?
+A) To warm the air before it enters the respiratory surface
+B) To transport respiratory gases to and from the surface, maintaining concentration gradients
+C) To produce mucus that protects the surface
+D) To provide the structural framework for the surface
+Correct: B
+Reasoning: A good blood supply is necessary to carry oxygen away from the respiratory surface and bring carbon dioxide to it, which helps maintain a steep diffusion gradient.
+Incorrect1: Warming air is a function of the nasal cavity's blood supply, but not the primary reason for all respiratory surfaces.
+Incorrect2: Mucus is produced by epithelial cells, not by the blood supply.
+Incorrect3: Structural support comes from other tissues like cartilage or connective tissue.
+---
+What is the significance of the C-shaped cartilage rings in the trachea?
+A) They allow the trachea to collapse during swallowing
+B) They provide flexibility for neck movement and prevent collapse
+C) They are the site of mucus production
+D) They facilitate gas exchange with the blood
+Correct: B
+Reasoning: The trachea is reinforced with C-shaped pieces of cartilage which prevent it from collapsing while still allowing flexibility for movement of the neck.
+Incorrect1: The cartilage prevents collapse; it doesn't allow it.
+Incorrect2: Mucus is produced by the lining epithelium.
+Incorrect3: Gas exchange does not occur in the trachea.
+---
+What is the key difference between the epithelium lining the bronchioles and that lining the alveoli?
+A) Bronchioles have squamous epithelium, alveoli have ciliated columnar
+B) Bronchioles have ciliated cuboidal epithelium, alveoli have moist squamous epithelium
+C) Both are lined by the same type of epithelium
+D) Alveoli have a thicker epithelium for protection
+Correct: B
+Reasoning: The bronchioles' walls consist of ciliated cuboidal epithelium. Lining each alveolus is moist squamous epithelium, which consists of very thin, flattened cells.
+Incorrect1: This reverses the correct types.
+Incorrect2: The epithelial types are distinctly different.
+Incorrect3: Alveolar epithelium is extremely thin for diffusion, not thick for protection.
+---
+What is the primary mechanism by which the majority of carbon dioxide is transported from the tissues to the lungs?
+A) Dissolved directly in the blood plasma
+B) Bound to the iron in the heme group of haemoglobin
+C) As bicarbonate ions formed inside red blood cells
+D) As carbonic acid in the red blood cells
+Correct: C
+Reasoning: Approximately 70% of carbon dioxide is carried in the blood as bicarbonate ions. Carbon dioxide diffuses into the blood, enters RBCs, and is converted to bicarbonate.
+Incorrect1: Only about 7% is dissolved in plasma.
+Incorrect2: CO2 binds to the globin part of haemoglobin, not the heme iron, to form carbaminohaemoglobin (23%).
+Incorrect3: Carbonic acid is an unstable intermediate that quickly dissociates into bicarbonate and H+.
+---
+During the chloride shift, why do bicarbonate ions (HCO3-) diffuse out of the red blood cell into the plasma?
+A) They are too large to remain inside the cell
+B) The partial pressure of CO2 is higher in the plasma
+C) To maintain electrical neutrality as HCO3- concentration rises inside the RBC
+D) To combine with sodium ions to form sodium bicarbonate for pH buffering
+Correct: C
+Reasoning: As carbonic acid dissociates, the concentration of HCO3- inside the RBC increases. To maintain ionic balance, these negatively charged ions diffuse out, balanced by Cl- moving in.
+Incorrect1: Size is not the primary driver; concentration gradient and charge balance are.
+Incorrect2: The partial pressure of CO2 is higher in the tissues, driving CO2 into the blood, not HCO3- out.
+Incorrect3: This is a consequence that happens in the plasma, but the primary reason for diffusion is the concentration/charge imbalance.
+---
+How does the affinity of haemoglobin for oxygen change as more oxygen molecules bind to it?
+A) The affinity decreases, making it harder to bind the next oxygen
+B) The affinity remains constant regardless of how many are bound
+C) The affinity increases, facilitating the binding of subsequent oxygen molecules
+D) The affinity increases only for the fourth oxygen molecule
+Correct: C
+Reasoning: The affinity of an oxygen molecule for heme increases as more oxygen molecules are bound, which is the principle of cooperative binding.
+Incorrect1: Affinity increases, it does not decrease.
+Incorrect2: Affinity changes due to cooperative binding.
+Incorrect3: The increase is progressive, not just for the last one, though the effect is most pronounced for the fourth binding.
+---
+What is the term for the volume of air that remains in the lungs even after the most forceful expiration?
+A) Tidal Volume
+B) Expiratory Reserve Volume
+C) Residual Volume
+D) Inspiratory Reserve Volume
+Correct: C
+Reasoning: Residual volume is the volume of air remaining in the lungs even after a forcible expiration, which is about 1.5 liters.
+Incorrect1: Tidal Volume is air exchanged in a normal breath.
+Incorrect2: Expiratory Reserve Volume is the extra air that can be exhaled after a normal breath, but not all air is expelled.
+Incorrect3: Inspiratory Reserve Volume is extra air that can be inhaled after a normal breath.
+---
+What is the primary function of the pleural membranes?
+A) To produce surfactant that reduces surface tension in the alveoli
+B) To attach the lungs directly to the ribs for movement
+C) To provide a protective, friction-reducing sac around each lung
+D) To serve as the main site for gas exchange with the blood
+Correct: C
+Reasoning: Each lung is encased in a thin membranous sac called the pleura. These protect the lungs, stop them leaking air into the thoracic cavity and reduce friction between the lungs and the wall of the thorax.
+Incorrect1: Surfactant is produced by cells in the alveoli.
+Incorrect2: The lungs are not directly attached to the ribs; the pleural cavity allows them to slide.
+Incorrect3: Gas exchange occurs in the alveoli.
+---
+What is the state of a haemoglobin molecule when one to three of its heme sites are bound to oxygen?
+A) Fully saturated
+B) Unsaturated
+C) Partially saturated
+D) Reduced
+Correct: C
+Reasoning: When one to three heme sites are occupied, the haemoglobin is said to be partially saturated.
+Incorrect1: Fully saturated means all four sites are bound.
+Incorrect2: Unsaturated means no oxygen is bound.
+Incorrect3: Reduced refers to the state of iron, not oxygen saturation.
+---
+Which specific nerve fibers carry the impulses from the breathing centre to the diaphragm to stimulate contraction?
+A) Vagus nerves
+B) Intercostal nerves
+C) Phrenic nerves
+D) Sympathetic nerves
+Correct: C
+Reasoning: The breathing centre communicates with the diaphragm by the phrenic nerves.
+Incorrect1: Vagus nerves carry sensory information from the lungs and airways.
+Incorrect2: Intercostal nerves supply the intercostal muscles.
+Incorrect3: Sympathetic nerves regulate airway diameter, not the primary rhythm of diaphragm contraction.
+---
+Why might a person with carbon monoxide poisoning have cherry-red lips, a symptom not typical of simple oxygen deprivation?
+A) CO causes vasodilation in the skin, increasing blood flow to the lips
+B) CO bound to haemoglobin (carboxyhaemoglobin) has a characteristic cherry-red color
+C) CO causes a fever, which reddens the skin
+D) CO destroys red blood cells, releasing haemoglobin into the skin
+Correct: B
+Reasoning: Carbon monoxide binds to haemoglobin to form carboxyhaemoglobin, which has a bright cherry-red color, giving the lips this distinct appearance.
+Incorrect1: Vasodilation is not the direct cause of the specific cherry-red color.
+Incorrect2: Fever is not a direct result of CO binding.
+Incorrect3: CO does not destroy RBCs; it binds to haemoglobin within them.
+---
+What is the approximate partial pressure of oxygen (PO2) in the arterial blood of a healthy individual?
+A) 100 mmHg
+B) 95 mmHg
+C) 40 mmHg
+D) 20 mmHg
+Correct: B
+Reasoning: In a healthy individual, the PO2 in arterial blood is about 95 mmHg, at which point haemoglobin is about 97% saturated.
+Incorrect1: 100 mmHg is the PO2 for 100% saturation, which is the maximum capacity, not the normal arterial value.
+Incorrect2: 40 mmHg is the PO2 in venous blood.
+Incorrect3: 20 mmHg is the PO2 in highly active tissues.
+---
+What is the primary role of the cilia in the bronchioles?
+A) To constrict the airway to control airflow
+B) To move mucus and trapped particles upwards towards the pharynx
+C) To perform gas exchange with the blood
+D) To produce surfactant to keep the airways open
+Correct: B
+Reasoning: The walls of bronchioles consist of ciliated cuboidal epithelium. The cilia function to move mucus and trapped substances upward toward the pharynx for removal, part of the mucociliary escalator.
+Incorrect1: Airflow control is achieved by the smooth muscle layer, not the cilia.
+Incorrect2: Gas exchange occurs in the alveoli.
+Incorrect3: Surfactant is produced in the alveoli, not by bronchiolar cilia.
+---
+What is the primary function of the glottis?
+A) To produce sound by vibrating
+B) To act as a passageway for food into the esophagus
+C) To serve as the opening into the larynx
+D) To close off the nasal cavity during swallowing
+Correct: C
+Reasoning: The opening of the larynx is called the glottis.
+Incorrect1: Sound is produced by the vocal cords within the larynx.
+Incorrect2: The esophagus is behind the trachea; the glottis is the airway opening.
+Incorrect3: Closing the nasopharynx is a function of the soft palate and uvula.
+---
+What is the primary factor that determines the direction of the reversible reaction where oxygen binds to or dissociates from haemoglobin?
+A) The concentration of carbonic anhydrase
+B) The partial pressure of oxygen
+C) The number of red blood cells
+D) The blood glucose level
+Correct: B
+Reasoning: At high partial pressure of oxygen (in the lungs), oxygen binds with haemoglobin. At low partial pressure of oxygen (in the tissues), oxygen is released.
+Incorrect1: Carbonic anhydrase catalyzes the reaction but does not determine its direction based on concentration.
+Incorrect2: The number of RBCs affects capacity, not the direction of binding in a given location.
+Incorrect3: Glucose levels are not a direct factor in O2-Hb binding direction.
+---
+What is the role of the nasal septum?
+A) It produces mucus to moisten the air
+B) It partitions the two nasal cavities
+C) It warms the air entering the nose
+D) It is the external opening of the nostril
+Correct: B
+Reasoning: There are two nasal cavities which are partitioned by means of nasal septum (the part of nasal bone).
+Incorrect1: Mucus production is by the mucous membrane.
+Incorrect2: Warming is by blood capillaries.
+Incorrect3: The external openings are the nostrils.
+---
+What is the fundamental reason why the lungs themselves cannot actively draw in air?
+A) They lack muscle tissue
+B) They are protected by the rib cage
+C) They are filled with air
+D) They are connected to the trachea
+Correct: A
+Reasoning: The lungs themselves neither draw in air nor push it out. They are passive structures that follow the movements of the thoracic cavity created by muscles.
+Incorrect1: The rib cage protects them, but doesn't explain why they can't draw in air.
+Incorrect2: Being filled with air doesn't impart the ability to create active suction.
+Incorrect3: The connection to the trachea is a passive airway.
+---
+What is the primary advantage of the one-way flow of air through a bird's lung compared to the tidal flow in human lungs?
+A) Birds require less oxygen overall
+B) It allows for continuous gas exchange without mixing of fresh and stale air
+C) It allows birds to fly faster
+D) It makes bird lungs smaller and more efficient
+Correct: B
+Reasoning: Birds have one-way flow of air through the lungs so there is no dead air (residual volume) in the bird's lung, allowing for more efficient extraction of oxygen.
+Incorrect1: Birds, especially during flight, have high oxygen demands.
+Incorrect2: Flight speed is related to many factors, not just lung airflow pattern.
+Incorrect3: Bird lungs are efficient, but the primary advantage is the elimination of dead space and continuous exchange.
+---
+In the context of CO2 transport, what is Hamburger's phenomenon?
+A) The binding of CO2 to the globin part of haemoglobin
+B) The exchange of bicarbonate and chloride ions across the RBC membrane
+C) The dissociation of carbonic acid into bicarbonate and hydrogen ions
+D) The combination of CO2 with water to form carbonic acid
+Correct: B
+Reasoning: The exchange of bicarbonate and chloride ions across the RBC membrane, maintaining ionic balance, is called the chloride shift or Hamburger's phenomenon.
+Incorrect1: This is the formation of carbaminohaemoglobin.
+Incorrect2: This is the dissociation reaction.
+Incorrect3: This is the hydration reaction catalyzed by carbonic anhydrase.
+---
+What happens to the external intercostal muscles during a forceful or active expiration?
+A) They contract strongly
+B) They relax
+C) They remain in a state of tetanus
+D) They are not involved in expiration at all
+Correct: B
+Reasoning: During expiration, the external intercostal muscles relax. For a forceful expiration, the internal intercostals and abdominal muscles contract, but the external intercostals remain relaxed.
+Incorrect1: Contraction of external intercostals is for inspiration.
+Incorrect2: They do not remain contracted (tetanus) during normal breathing cycles.
+Incorrect3: They are involved in the normal breathing cycle by relaxing during expiration.
+---
+What is the approximate volume of oxygen carried by 100 ml of fully saturated blood?
+A) 5 ml
+B) 14.4 ml
+C) 19.4 ml
+D) 20 ml
+Correct: D
+Reasoning: 1 gm Hb can combine with 1.34 ml of O2. Since there is 15 gms Hb/100ml of blood, 100 ml blood combines with 20 ml O2 at 100% saturation.
+Incorrect1: 5 ml is the amount of O2 typically released to tissues by 100 ml blood.
+Incorrect2: 14.4 ml is the amount in 100 ml of venous blood (75% saturated).
+Incorrect3: 19.4 ml is the amount in 100 ml of arterial blood (97% saturated).
+---
+What is the primary function of the surfactant secreted by special cells in the alveoli?
+A) To thicken the alveolar wall for protection against pathogens
+B) To trap dust and particles that reach the alveoli
+C) To lower surface tension and prevent alveolar collapse, and help kill bacteria
+D) To increase the diffusion rate of oxygen by making the membrane thinner
+Correct: C
+Reasoning: Surfactant lowers the surface tension of the fluid layer lining the alveolus, reducing the effort needed to breathe in and preventing collapse. It also helps to kill any bacteria which reach the alveoli.
+Incorrect1: Surfactant acts on the fluid lining, not by thickening the wall.
+Incorrect2: Particle trapping is a function of the upper respiratory tract.
+Incorrect3: Surfactant does not physically thin the membrane; it affects the fluid's surface tension.
+---
+What is the role of the expiratory centre located in the medulla oblongata?
+A) To continuously stimulate the diaphragm to contract
+B) To inhibit inspiration and, during forceful breathing, stimulate expiratory muscles
+C) To increase the rate of oxygen diffusion across the alveolar membrane
+D) To control the voluntary holding of breath
+Correct: B
+Reasoning: The expiratory centre (dorsal and lateral portions) inhibits inspiration and stimulates expiration, especially when more forceful exhalations are needed.
+Incorrect1: The inspiratory centre stimulates the diaphragm.
+Incorrect2: The medulla centres control the muscles of breathing, not diffusion rates.
+Incorrect3: Voluntary control is a function of the cerebral cortex.
+---
+What is the significance of the "waist" or narrow part of the pharynx?
+A) It is where the Eustachian tubes open
+B) It is located at the level of the sixth cervical vertebra where the esophagus and larynx begin
+C) It marks the boundary between the nasopharynx and oropharynx
+D) It is the location of the tonsils
+Correct: B
+Reasoning: The pharynx's lower end is narrower and located at the level of the sixth cervical vertebra (C6) where the commencement of the esophagus posteriorly and the larynx anteriorly takes place.
+Incorrect1: The Eustachian tubes open into the nasopharynx, not specifically at the narrow part.
+Incorrect2: The boundary is more superior.
+Incorrect3: Tonsils are located in the oropharynx and nasopharynx, not specifically at the narrowest point.
+---
+Why does myoglobin release its stored oxygen only when the partial pressure of oxygen is very low (below 20 mmHg)?
+A) It has a lower affinity for oxygen than haemoglobin
+B) It acts as an oxygen reserve for muscles when haemoglobin can no longer supply enough
+C) It is only found in fast-twitch muscle fibers
+D) It releases oxygen continuously, regardless of partial pressure
+Correct: B
+Reasoning: Myoglobin releases oxygen when the partial pressure of oxygen is below 20 mmHg. In this way, it acts as a store of oxygen in resting muscle, only releasing it when supplies from oxyhaemoglobin have been exhausted.
+Incorrect1: Myoglobin has a higher affinity for oxygen than haemoglobin.
+Incorrect2: It is found in muscle cells, not specifically only in fast-twitch.
+Incorrect3: Its release is dependent on low PO2, it does not release continuously.
+---
+What is the immediate result of the contraction of the internal intercostal muscles during the breathing cycle?
+A) The rib cage is pulled upward and outward
+B) The diaphragm flattens
+C) The rib cage is pulled downward and inward
+D) The volume of the thoracic cavity increases
+Correct: C
+Reasoning: During expiration, contraction of the internal intercostal muscles (along with relaxation of external intercostals) causes the rib cage to move downward and backward, decreasing thoracic volume.
+Incorrect1: This is the action of external intercostal contraction.
+Incorrect2: Diaphragm contraction is separate from intercostal action.
+Incorrect3: This action decreases, not increases, thoracic volume.
+---
+What is the term for the amount of air that enters the lungs during a normal, quiet inhalation at rest?
+A) Vital capacity
+B) Tidal volume
+C) Inspiratory reserve volume
+D) Total lung capacity
+Correct: B
+Reasoning: The amount of air which enters the lungs during normal inhalation at rest is the tidal volume, with an average of 500ml.
+Incorrect1: Vital capacity is the sum of tidal, inspiratory reserve, and expiratory reserve volumes.
+Incorrect2: Inspiratory reserve volume is the extra air inhaled during a deep breath.
+Incorrect3: Total lung capacity includes all volumes including residual volume.
+---
+What is the primary mechanism by which the blood capillaries in the nasal cavity condition the inhaled air?
+A) They release antibodies to neutralize pathogens
+B) They secrete mucus to trap particles
+C) They warm the air to approximately 30°C
+D) They filter out large dust particles with their walls
+Correct: C
+Reasoning: Underneath the mucous membrane, there are blood capillaries that help to warm the air to about 30°C, depending upon the external temperature.
+Incorrect1: Antibodies are not released by capillaries for air conditioning.
+Incorrect2: Mucus secretion is from the mucous membrane.
+Incorrect3: Filtration is done by hairs and cilia/mucus.
+---
+What is the final destination for the trapped substances moved by the cilia in the nasal cavity?
+A) The nostrils for expulsion
+B) The esophagus for swallowing
+C) The pharynx for removal
+D) The blood capillaries for absorption
+Correct: C
+Reasoning: Cilia move the trapped substances to the pharynx for their removal, where they can be swallowed or coughed out.
+Incorrect1: They are moved inward, not outward through the nostrils.
+Incorrect2: They go to the pharynx first; from there they can be swallowed into the esophagus.
+Incorrect3: They are not absorbed into the blood; they are removed.
+---
+Which part of the brain can influence the respiratory centre in response to emotions like fear or anger?
+A) Cerebellum
+B) Corpus callosum
+C) Limbic system
+D) Thalamus
+Correct: C
+Reasoning: Emotions acting through the limbic system of the brain can also affect the respiratory centre.
+Incorrect1: The cerebellum controls coordination and balance.
+Incorrect2: The corpus callosum connects the two cerebral hemispheres.
+Incorrect3: The thalamus is a sensory relay station.
+---
+How many molecules of oxygen can one molecule of haemoglobin transport when it is fully saturated?
+A) One
+B) Two
+C) Four
+D) Eight
+Correct: C
+Reasoning: Each molecule of haemoglobin can bind with four molecules of oxygen to form oxyhaemoglobin.
+Incorrect1: One is the capacity of myoglobin.
+Incorrect2: Two is not the correct number for haemoglobin.
+Incorrect3: Eight is the total number of oxygen atoms, but it is four O2 molecules.
+---
+What is the role of the smooth muscle layer in the walls of the bronchioles?
+A) To provide rigid support to keep the airway open
+B) To secrete mucus for trapping debris
+C) To control the diameter of the airway and thus air flow distribution
+D) To facilitate gas exchange with the blood
+Correct: C
+Reasoning: The bronchioles are responsible for controlling air distribution in the lungs. They change diameter by contracting or relaxing their smooth muscle layer to either increase or reduce air flow.
+Incorrect1: Rigid support is provided by cartilage, which bronchioles lack.
+Incorrect2: Mucus secretion is from the epithelial lining, not the smooth muscle.
+Incorrect3: Gas exchange does not occur in the bronchioles.
+---
+In the chemical equation for carbon dioxide transport, what is the role of carbonic anhydrase?
+A) To bind CO2 to the globin part of haemoglobin
+B) To catalyze the conversion of CO2 and water into carbonic acid
+C) To transport bicarbonate ions across the red blood cell membrane
+D) To release CO2 from bicarbonate in the lungs
+Correct: B
+Reasoning: Carbon dioxide combines with water to form carbonic acid in the presence of enzyme carbonic anhydrase: CO2 + H2O --(carbonic anhydrase)--> H2CO3.
+Incorrect1: This describes the formation of carbaminohaemoglobin, which does not require the enzyme.
+Incorrect2: Transport of bicarbonate is via the chloride shift, not the enzyme.
+Incorrect3: The enzyme catalyzes the reverse reaction as well, but its primary described role is in forming carbonic acid.
+---
+What happens to the oxyhaemoglobin molecule when it encounters a hydrogen ion (H+) in the tissues?
+A) It binds the H+ and releases oxygen
+B) It breaks down completely
+C) It converts into carbaminohaemoglobin
+D) It becomes more saturated with oxygen
+Correct: A
+Reasoning: The hydrogen ion readily associates with oxyhaemoglobin (Hb4O2) to form haemoglobinic acid (HHb) and oxygen is released to the tissue.
+Incorrect1: It does not break down; it forms haemoglobinic acid.
+Incorrect2: Carbaminohaemoglobin is formed from CO2 binding to globin, not from H+ binding.
+Incorrect3: The presence of H+ (lower pH) decreases oxygen affinity, promoting release, not increased saturation.
+---
+What is the primary function of the epiglottis?
+A) To produce sound for vocalization
+B) To close the nasopharynx during swallowing
+C) To cover the glottis and prevent food from entering the larynx
+D) To warm and humidify air entering the larynx
+Correct: C
+Reasoning: During swallowing, the larynx is raised and the epiglottis is pressed downward, partially covering the opening into the larynx (glottis) to prevent foods and liquids from entering the air passages.
+Incorrect1: Sound production is by the vocal cords.
+Incorrect2: Closing the nasopharynx is done by the soft palate and uvula.
+Incorrect3: Warming and humidifying occur in the nasal cavity.
+---
+What is the approximate partial pressure of oxygen (PO2) in the venous blood returning to the lungs?
+A) 100 mmHg
+B) 95 mmHg
+C) 40 mmHg
+D) 20 mmHg
+Correct: C
+Reasoning: Venous blood has a PO2 of about 40 mmHg, at which point haemoglobin is approximately 75% saturated.
+Incorrect1: 100 mmHg is the PO2 for 100% saturation in the lungs.
+Incorrect2: 95 mmHg is the PO2 in arterial blood.
+Incorrect3: 20 mmHg is the PO2 in highly active tissues.
+---
+What is the fate of the majority of bicarbonate ions (HCO3-) formed in the red blood cells during CO2 transport?
+A) They remain inside the RBC and bind to haemoglobin
+B) They are converted back into CO2 and water immediately
+C) They diffuse into the blood plasma in exchange for chloride ions
+D) They are actively pumped into the mitochondria
+Correct: C
+Reasoning: From inside of the erythrocytes, negatively charged HCO3- ions diffuse to the plasma. This is balanced by the diffusion of chloride ions, Cl-, in the opposite direction.
+Incorrect1: The majority diffuse out; some may remain, but the process is defined by the chloride shift.
+Incorrect2: This reverse reaction occurs in the lungs, not in the systemic capillaries.
+Incorrect3: Bicarbonate is not pumped into mitochondria for this purpose.
+---
+What is the primary reason for the presence of a large number of alveoli (approximately 700 million) in the lungs?
+A) To produce a large amount of surfactant
+B) To provide a large surface area for efficient gas exchange
+C) To filter out a large volume of airborne pathogens
+D) To increase the weight of the lungs for structural stability
+Correct: B
+Reasoning: The large number of alveoli provides a huge surface area (70-90 m²) so that a sufficient amount of gases can be exchanged according to the organism's need.
+Incorrect1: Surfactant is produced by some alveolar cells, but the number is for surface area.
+Incorrect2: Filtration is done by the upper respiratory tract.
+Incorrect3: Increased weight is not a benefit; the spongy texture is due to air spaces.
+---
+What happens to the volume of the thoracic cavity when the external intercostal muscles contract and the diaphragm contracts and flattens?
+A) It decreases significantly
+B) It increases
+C) It remains the same
+D) It first decreases, then increases
+Correct: B
+Reasoning: Contraction of the diaphragm causes it to flatten, and contraction of the external intercostal muscles causes the rib cage to move upward and forward. Both these events result in an increase of the inner space of the thoracic cavity.
+Incorrect1: This is what happens during expiration.
+Incorrect2: It changes actively as part of the breathing cycle.
+Incorrect3: The combined action increases volume.
+---
+What is the key structural difference between the primary bronchi and the bronchioles?
+A) Bronchi are smaller in diameter than bronchioles
+B) Bronchi contain cartilage in their walls, while bronchioles do not
+C) Bronchi are sites of gas exchange, while bronchioles are not
+D) Bronchi have smooth muscle, while bronchioles do not
+Correct: B
+Reasoning: The trachea divides to form primary bronchi, which contain cartilage. The bronchioles are less than 1mm in diameter and have no cartilage structures.
+Incorrect1: Bronchi are larger in diameter than bronchioles.
+Incorrect2: Gas exchange occurs in alveoli, not bronchi or bronchioles.
+Incorrect3: Bronchioles have smooth muscle; bronchi also have smooth muscle.
+---
+What is the primary function of the nasopharynx?
+A) To serve as a common passage for food and air
+B) To condition inspired air and pass it to the larynx
+C) To initiate the swallowing reflex
+D) To produce mucus for the entire respiratory tract
+Correct: B
+Reasoning: The nasopharynx is continuous with the nasal cavity, and performs a respiratory function by conditioning inspired air and propagating it into the larynx.
+Incorrect1: This is a function of the oropharynx.
+Incorrect2: Swallowing is initiated in the oropharynx.
+Incorrect3: Mucus production occurs throughout the tract, not just in the nasopharynx.
+---
+What is the direct effect of carbon monoxide (CO) binding to haemoglobin, beyond simply blocking oxygen binding sites?
+A) It increases the blood's ability to carry oxygen
+B) It decreases the ability of the remaining bound oxygen to be released to tissues
+C) It causes haemoglobin to release all its oxygen immediately
+D) It has no effect on oxygen release
+Correct: B
+Reasoning: CO binds to haemoglobin with an affinity 249 times greater than that of oxygen, and it also decreases the ability of haemoglobin to release any oxygen that is bound to the tissues.
+Incorrect1: It drastically reduces oxygen-carrying capacity.
+Incorrect2: It does not cause immediate release; it holds on tighter.
+Incorrect3: It has a significant negative effect on oxygen release.
+---
+Which part of the brain contains the interconnected centers that control the basic rhythm of inspiration and expiration?
+A) Cerebrum
+B) Cerebellum
+C) Medulla oblongata
+D) Hypothalamus
+Correct: C
+Reasoning: The medulla contains two interconnected centers that control breathing: the inspiratory center and the expiratory center.
+Incorrect1: The cerebrum is for voluntary control.
+Incorrect2: The cerebellum is for coordination and balance.
+Incorrect3: The hypothalamus regulates homeostasis like temperature and hunger.
+---
+Why is the right lung slightly larger and composed of three lobes while the left has only two?
+A) The right lung is more active in gas exchange
+B) The heart is located predominantly on the left side of the chest
+C) The diaphragm is higher on the right side
+D) The right main bronchus is shorter, allowing more lung development
+Correct: B
+Reasoning: The left lung is smaller in volume because of the asymmetrical position of the heart, which occupies space in the left thoracic cavity.
+Incorrect1: Both lungs are equally active in gas exchange relative to their size.
+Incorrect2: The diaphragm is higher on the right due to the liver, but this is not the primary reason for the lobe difference.
+Incorrect3: The right main bronchus is shorter and wider, but this is not the reason for the lobe number.
+---
+In the oxygen-haemoglobin dissociation curve, what is the relationship between partial pressure of oxygen and haemoglobin saturation?
+A) As PO2 increases, saturation decreases
+B) As PO2 increases, saturation increases, but not in a straight line
+C) Saturation is independent of PO2
+D) As PO2 increases, saturation increases in a perfectly linear fashion
+Correct: B
+Reasoning: The oxygen-haemoglobin dissociation curve shows that as the partial pressure of oxygen increases, a proportionately greater number of oxygen molecules are bound by heme, resulting in a sigmoidal (S-shaped) curve, not a straight line.
+Incorrect1: Saturation increases with PO2.
+Incorrect2: It is highly dependent on PO2.
+Incorrect3: The relationship is sigmoidal due to cooperative binding, not linear.
+---
+What is the primary role of the chloride shift in the process of respiration?
+A) To facilitate the loading of oxygen onto haemoglobin in the lungs
+B) To maintain ionic balance and enable the continued transport of CO2 as bicarbonate
+C) To transport chloride ions to the lungs for gas exchange
+D) To increase the acidity of the blood for oxygen release
+Correct: B
+Reasoning: The chloride shift, where Cl- enters the RBC as HCO3- leaves, maintains electrical neutrality. This allows for the continuous conversion of CO2 to HCO3- in the tissues and its transport in the plasma.
+Incorrect1: The chloride shift is part of CO2, not O2, transport.
+Incorrect2: Chloride ions are not directly involved in gas exchange in the lungs.
+Incorrect3: The shift helps maintain pH balance, not primarily to increase acidity.
+---
+What is the volume of air that can be forcibly exhaled after the exhalation of a normal tidal volume?
+A) Tidal Volume
+B) Inspiratory Reserve Volume
+C) Expiratory Reserve Volume
+D) Residual Volume
+Correct: C
+Reasoning: Expiratory Reserve Volume (ERV) is the volume of air that can be exhaled forcibly after exhalation of normal tidal volume, about 1200ml.
+Incorrect1: Tidal Volume is the amount of a normal breath.
+Incorrect2: Inspiratory Reserve Volume is extra air that can be inhaled.
+Incorrect3: Residual Volume is the air left after a forced exhalation.
+---
+What is the primary function of the cilia present in the mucous membrane of the nasal cavities?
+A) To warm the inhaled air
+B) To produce mucus
+C) To move trapped substances to the pharynx
+D) To constrict the air passage
+Correct: C
+Reasoning: The mucus and cilia filter the air and prevent the entry of foreign particles. Cilia move the trapped substances to the pharynx for their removal.
+Incorrect1: Warming is by blood capillaries.
+Incorrect2: Mucus is secreted by the mucous membrane.
+Incorrect3: Constriction is a function of smooth muscle, not cilia.
+---
+During the process of swallowing, what protects the larynx from the entry of food or liquid?
+A) The uvula closes over the larynx
+B) The epiglottis presses downward to cover the glottis
+C) The vocal cords contract to seal the airway
+D) The soft palate blocks the laryngeal opening
+Correct: B
+Reasoning: During swallowing, the larynx is raised and the epiglottis is pressed downward, partially covering the opening into the larynx (the glottis) to prevent foods and liquids from entering the air passages.
+Incorrect1: The uvula closes the nasopharynx, not the larynx.
+Incorrect2: The vocal cords can close the glottis, but the epiglottis is the primary physical flap for directing food.
+Incorrect3: The soft palate closes the nasopharynx.
+---
+What is the primary factor that allows the bronchioles to regulate the amount of air flowing to different parts of the lungs?
+A) The presence of cartilage plates that can flex
+B) The action of cilia that can beat faster or slower
+C) The contraction and relaxation of smooth muscle in their walls
+D) The amount of surfactant produced in adjacent alveoli
+Correct: C
+Reasoning: The bronchioles are responsible for controlling air distribution in the lungs. They change diameter by contracting or relaxing their smooth muscle layer to either increase or reduce air flow.
+Incorrect1: Bronchioles lack cartilage, which is why they can change diameter.
+Incorrect2: Cilia are for moving mucus, not regulating airflow.
+Incorrect3: Surfactant affects alveolar surface tension, not bronchiolar diameter.
+---
+In the reaction for the formation of oxyhaemoglobin, what is the significance of it being a reversible reaction?
+A) It allows for the breakdown of haemoglobin when it is old
+B) It enables oxygen to be loaded in the lungs and unloaded in the tissues
+C) It prevents oxygen from ever being released once bound
+D) It allows haemoglobin to also carry carbon dioxide
+Correct: B
+Reasoning: The binding of oxygen with haemoglobin is a reversible reaction. At high partial pressure of oxygen (lungs), it binds, and at low partial pressure (tissues), it is released.
+Incorrect1: Haemoglobin breakdown is a separate process.
+Incorrect2: Reversibility is key to its function, so it must allow release.
+Incorrect3: CO2 is carried by a different mechanism, mostly not at the heme site.
+---
+What is the approximate percentage of carbon dioxide that is transported as carbaminohaemoglobin?
+A) 70%
+B) 23%
+C) 7%
+D) 97%
+Correct: B
+Reasoning: About 23% of carbon dioxide is carried as carbaminohaemoglobin, where CO2 combines with the globin part of haemoglobin.
+Incorrect1: 70% is transported as bicarbonate ions.
+Incorrect2: 7% is dissolved in plasma.
+Incorrect3: 97% is the percentage of oxygen transported by haemoglobin.
+---
+What is the primary reason for tilting the victim's head back during CPR?
+A) To open the mouth wider for a better seal
+B) To prevent the tongue from obstructing the airway
+C) To allow the epiglottis to close properly
+D) To make it easier to pinch the nostrils
+Correct: B
+Reasoning: The instructions state: "If the head is not tilted, the tongue may block the throat." Tilting the head lifts the tongue away from the back of the throat.
+Incorrect1: It opens the airway, not just the mouth.
+Incorrect2: Tilting the head opens the airway; the epiglottis is not an issue here.
+Incorrect3: While it might help, the primary reason given is to prevent tongue blockage.
+---
+What is the main component of the mixture called Nitrox used in some SCUBA apparatus?
+A) 100% oxygen
+B) A mix of oxygen and helium
+C) About 35% oxygen and 65% nitrogen
+D) Compressed regular air
+Correct: C
+Reasoning: A typical aqualung contains compressed air or a mixture called Nitrox which consists of about 35 percent oxygen and 65 percent nitrogen.
+Incorrect1: 100% oxygen is toxic at depth.
+Incorrect2: Helium is used in trimix, not standard Nitrox.
+Incorrect3: Compressed air is an alternative, but Nitrox specifically has a higher oxygen percentage.
+---
+What is the primary reason why the respiratory surface must be moist?
+A) To allow gases to dissolve before they can diffuse through the membrane
+B) To trap pathogens and dust particles
+C) To cool the air as it enters the body
+D) To provide lubrication for the passage of air
+Correct: A
+Reasoning: The respiratory surface must be moist and permeable so that gases can pass through. Gases typically need to dissolve in water to diffuse across a cell membrane.
+Incorrect1: Trapping pathogens is a function of mucus, but the moisture itself is for gas dissolution.
+Incorrect2: Moisture is for gas exchange, not primarily for cooling.
+Incorrect3: Lubrication is a secondary benefit, but the primary need is for gas dissolution.
+---
+What happens to the bicarbonate ions (HCO3-) in the blood plasma when they reach the capillaries of the lungs?
+A) They are converted into carbon monoxide and water
+B) They diffuse back into the red blood cells and re-form CO2
+C) They are permanently removed from the blood by the kidneys
+D) They bind to haemoglobin for transport to the tissues
+Correct: B
+Reasoning: In the lungs, where the partial pressure of CO2 is lower in the alveoli, the equation reverses. Bicarbonate ions combine with hydrogen ions (which come from haemoglobinic acid) to re-form carbonic acid, which then dissociates into CO2 and water, and CO2 diffuses out.
+Incorrect1: Bicarbonate does not form carbon monoxide.
+Incorrect2: They are not permanently removed; the process is reversed in the lungs.
+Incorrect3: CO2 binds to globin as carbaminohaemoglobin, not bicarbonate.
+---
+What is the function of the vocal cords?
+A) To open and close the glottis during swallowing
+B) To produce vocal sounds when air vibrates them
+C) To filter particles from the air
+D) To humidify the air passing through the larynx
+Correct: B
+Reasoning: Inside the larynx are two pairs of horizontal folds called vocal cords. They are responsible for vocal sounds, which are created when air is forced between them, causing them to vibrate.
+Incorrect1: The epiglottis covers the glottis during swallowing.
+Incorrect2: Filtration is a function of the nasal cavity.
+Incorrect3: Humidification occurs mainly in the nasal cavity.
+---
+What is the immediate cause of air flowing into the lungs during inspiration?
+A) Active suction by the lung tissue
+B) Contraction of muscles in the bronchioles
+C) The pressure in the lungs becomes lower than atmospheric pressure
+D) The diaphragm relaxes, pushing air in
+Correct: C
+Reasoning: During inspiration, the thoracic cavity volume increases, reducing pressure in the thorax and lungs to less than atmospheric pressure. Air therefore enters the lungs down its pressure gradient.
+Incorrect1: Lungs are passive and do not create suction.
+Incorrect2: Bronchiole muscles control distribution, not the bulk flow of air into the lungs.
+Incorrect3: Diaphragm relaxation decreases volume and would push air out.
+---
+What is the primary role of the pleural fluid found between the two pleural membranes?
+A) To provide oxygen to the lung tissue
+B) To act as a lubricant, reducing friction during breathing movements
+C) To produce surfactant for the alveoli
+D) To anchor the lungs firmly to the rib cage
+Correct: B
+Reasoning: The pleural membranes are tough and flexible. The fluid between them reduces friction between the lungs and the wall of the thorax during breathing movements.
+Incorrect1: Oxygen is supplied by the bronchial circulation, not pleural fluid.
+Incorrect2: Surfactant is produced in the alveoli.
+Incorrect3: The fluid allows them to slide, not anchor firmly.
+---
+Which specific cartilages in the larynx are responsible for the production of vocal sounds?
+A) Thyroid and cricoid cartilages
+B) Epiglottis
+C) Arytenoid cartilages
+D) The vocal cords themselves are folds of mucous membrane, not separate cartilages
+Correct: D
+Reasoning: The vocal cords are two pairs of horizontal folds in the mucous membrane, containing elastic fibres. They are not separate cartilages but are supported by the arytenoid cartilages.
+Incorrect1: The thyroid cartilage houses the vocal cords but does not produce sound itself.
+Incorrect2: The epiglottis is a cartilage flap for protection.
+Incorrect3: Arytenoid cartilages attach to the vocal cords and move them, but the cords themselves are the sound source.
+---
+How does a decrease in blood pH (increase in acidity) affect the oxygen-carrying capacity of haemoglobin?
+A) It increases the affinity of haemoglobin for oxygen, making it hold on tighter
+B) It decreases the affinity of haemoglobin for oxygen, promoting oxygen release
+C) It has no effect on oxygen binding
+D) It causes haemoglobin to break down
+Correct: B
+Reasoning: The oxygen-carrying capacity is sensitive to a drop in pH of blood. A decrease in pH (increase in H+ concentration) decreases haemoglobin's affinity for oxygen, facilitating its release to tissues (Bohr effect).
+Incorrect1: Acidity decreases, not increases, affinity.
+Incorrect2: It has a significant effect.
+Incorrect3: It does not cause breakdown at physiological pH changes.
+---
+What is the primary purpose of the ventilation mechanism associated with a respiratory surface?
+A) To warm the air to body temperature
+B) To maintain a steep concentration gradient for diffusion
+C) To filter out pathogens from the air
+D) To add moisture to the incoming air
+Correct: B
+Reasoning: There should be a good ventilation mechanism to maintain a steep diffusion gradient across the respiratory surface. Ventilation brings in fresh air with high O2 and removes air with high CO2.
+Incorrect1: Warming is a function of the nasal cavity's blood supply.
+Incorrect2: Filtration is a function of hairs, cilia, and mucus.
+Incorrect3: Moistening is a function of the mucus.
+---
+What is the role of the thin saliva produced by the uvula?
+A) To begin the chemical digestion of carbohydrates
+B) To keep the throat well lubricated
+C) To neutralize stomach acid in case of reflux
+D) To moisten food for swallowing
+Correct: B
+Reasoning: The uvula produces thin saliva that keeps the throat well lubricated.
+Incorrect1: Salivary amylase from the salivary glands begins starch digestion.
+Incorrect2: Lubrication is the specific function mentioned for the uvula's saliva.
+Incorrect3: Moistening food is a general function of saliva, but the uvula's specific role is throat lubrication.
+---
+Why does the blood in the pulmonary veins have a higher oxygen content than the blood in the pulmonary arteries?
+A) Oxygen is added to the blood by the lungs
+B) The blood has given up its carbon dioxide
+C) Deoxygenated blood is pumped from the heart to the lungs via the pulmonary arteries
+D) The pulmonary veins carry blood from the lungs to the heart after gas exchange has occurred
+Correct: D
+Reasoning: The pulmonary arteries carry deoxygenated blood from the heart to the lungs. After gas exchange in the alveolar capillaries, the blood becomes oxygenated and is carried back to the heart via the pulmonary veins.
+Incorrect1: This is true, but option D is the complete physiological description.
+Incorrect2: This is also true, but option D describes the anatomical path and process.
+Incorrect3: This describes the path of deoxygenated blood, not why veins have more oxygen.
+---
+What is the state of the internal intercostal muscles during normal, quiet inspiration?
+A) They contract to assist the external intercostals
+B) They relax
+C) They remain in a state of partial contraction
+D) They contract to prevent over-inflation
+Correct: B
+Reasoning: During normal inspiration, the external intercostals contract and the internal intercostals relax. The internal intercostals contract during forced expiration.
+Incorrect1: They relax, they do not assist in inspiration.
+Incorrect2: They relax, they are not partially contracted.
+Incorrect3: They are not involved in preventing over-inflation; that's a reflex mechanism.`;
+
+function parseMCQsFromText(text) {
+    const blocks = text.split('---').map(b => b.trim()).filter(b => b.length > 0);
+    return blocks.map(block => {
+        const lines = block.split('\n').map(l => l.trim()).filter(l => l.length > 0);
+        let question = ''; let options = ['', '', '', '']; let correct = ''; let reasoning = ''; let inc1 = '', inc2 = '', inc3 = '';
+        for (let line of lines) {
+            if (!question && !line.match(/^[A-D]\)/) && !line.toLowerCase().startsWith('correct:') && !line.toLowerCase().startsWith('reasoning:') && !line.toLowerCase().startsWith('incorrect')) {
+                question = line;
+            } else if (line.match(/^A\)/i)) options[0] = line.substring(2).trim();
+            else if (line.match(/^B\)/i)) options[1] = line.substring(2).trim();
+            else if (line.match(/^C\)/i)) options[2] = line.substring(2).trim();
+            else if (line.match(/^D\)/i)) options[3] = line.substring(2).trim();
+            else if (line.toLowerCase().startsWith('correct:')) correct = line.substring(8).trim().toUpperCase();
+            else if (line.toLowerCase().startsWith('reasoning:')) reasoning = line.substring(10).trim();
+            else if (line.toLowerCase().startsWith('incorrect1:') || line.toLowerCase().startsWith('incorrect a:')) inc1 = line.substring(line.indexOf(':')+1).trim();
+            else if (line.toLowerCase().startsWith('incorrect2:') || line.toLowerCase().startsWith('incorrect b:')) inc2 = line.substring(line.indexOf(':')+1).trim();
+            else if (line.toLowerCase().startsWith('incorrect3:') || line.toLowerCase().startsWith('incorrect c:')) inc3 = line.substring(line.indexOf(':')+1).trim();
+        }
+        return {
+            question, options, correctAnswer: correct.charCodeAt(0)-65, correctLetter: correct,
+            reasoning, incorrectReasons: [inc1, inc2, inc3]
+        };
+    });
+}
+
+const quizData_MPX_001RB = parseMCQsFromText(RAW_MCQS);
+
+// ================== CONSTANTS ==================
+const QUIZ_ACCESS_CODE_PREFIX = "MPX-";
+const DEV_ACCESS_CODE = "MedPlex-Admin-001";
+const ACADEMY_NAME = "MedPlex MDCAT Preparation Academy";
+const QUIZ_SUBJECT = "Homeostasis (MDCAT)";
+const WEBSITE_LINK = "https://medplex-academy-testing-engine.web.app";
+const WHATSAPP_CONTACT = "03000047325";
+const WHATSAPP_COMMUNITY = "https://chat.whatsapp.com/H44gHwyJPW5HHMF3WDoPF8";
+const TIME_PER_MCQ = 60;
+const MARK_PER_MCQ = 1;
+const NEGATIVE_MARKING = 0;
+
+// Global state
+let currentQuizId = 'MPX-001RB';
+let quizData = [];
+let originalQuizData = quizData_MPX_001RB;
+let currentQuestion = 0;
+let userAnswers = [];
+let timeLeft;
+let totalTimeInterval;
+let studentData = {};
+let studentAccessCode = "";
+let shuffledMapping = [];
+
+// DOM elements
+const questionNavEl = document.getElementById('question-nav');
+const questionTextEl = document.getElementById('question-text');
+const optionsContainerEl = document.getElementById('options-container');
+const reasoningEl = document.getElementById('reasoning');
+const reasoningTextEl = document.getElementById('reasoning-text');
+const quizTitleEl = document.getElementById('quiz-title');
+const quizSubjectEl = document.getElementById('quiz-subject');
+const totalTimerEl = document.getElementById('timer');
+const quizProgressEl = document.getElementById('quiz-progress');
+const studentInfoTable = document.getElementById('student-info-table');
+const allMcqsList = document.getElementById('all-mcqs-list');
+const quizAccessCodeInput = document.getElementById('quizAccessCode');
+const quizAccessErrorBox = document.getElementById('quiz-error-box');
+const reasoningBtn = document.getElementById('reasoning-btn');
+const quizNotificationEl = document.getElementById('quiz-notification');
+const notificationTitleEl = document.getElementById('notification-title');
+const notificationMessageEl = document.getElementById('notification-message');
+const websiteLinkEl = document.getElementById('website-link');
+const whatsappContactLinkEl = document.getElementById('whatsapp-contact-link');
+
+let currentMcqPage = 0;
+const mcqsPerPage = 10;
+
+// Device toggle
+document.getElementById('deviceToggle').addEventListener('click', function() {
+    document.body.classList.toggle('laptop-view');
+    this.textContent = document.body.classList.contains('laptop-view') ? 'Switch to Mobile View' : 'Switch to Laptop View';
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const storedStudentData = localStorage.getItem('studentData');
+    if (storedStudentData) {
+        studentData = JSON.parse(storedStudentData);
+        document.getElementById('studentName').value = studentData['Student Name'] || '';
+        document.getElementById('fatherName').value = studentData['Father Name'] || '';
+        document.getElementById('gender').value = studentData['Gender'] || '';
+        document.getElementById('email').value = studentData['Email'] || '';
+        document.getElementById('mobile').value = studentData['Mobile'] || '';
+        document.getElementById('city').value = studentData['City'] || '';
+    }
+    const storedCode = localStorage.getItem('studentAccessCode');
+    if (storedCode) studentAccessCode = storedCode;
+    showPage('signin-page');
+    document.getElementById('toggleQuizAccessCode')?.addEventListener('click', () => togglePasswordVisibility('quizAccessCode', 'toggleQuizAccessCode'));
+});
+
+function showPage(pageId) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.getElementById(pageId).classList.add('active');
+    document.querySelectorAll('.error-box, .success-box').forEach(el => el.style.display = 'none');
+}
+
+function togglePasswordVisibility(inputID, iconID) {
+    const passwordInput = document.getElementById(inputID);
+    const toggleIcon = document.getElementById(iconID);
+    if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        toggleIcon.classList.remove('fa-eye-slash'); toggleIcon.classList.add('fa-eye');
+    } else {
+        passwordInput.type = 'password';
+        toggleIcon.classList.remove('fa-eye'); toggleIcon.classList.add('fa-eye-slash');
+    }
+}
+
+function showQuizNotification(title, message, type = 'info') {
+    notificationTitleEl.textContent = title;
+    notificationMessageEl.textContent = message;
+    quizNotificationEl.classList.remove('warning', 'error');
+    if (type === 'warning') quizNotificationEl.classList.add('warning');
+    else if (type === 'error') quizNotificationEl.classList.add('error');
+    quizNotificationEl.classList.add('show');
+    setTimeout(() => quizNotificationEl.classList.remove('show'), 5000);
+}
+
+function shuffleArray(arr) {
+    for (let i = arr.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [arr[i], arr[j]] = [arr[j], arr[i]]; }
+    return arr;
+}
+
+function createShuffledQuiz(original) {
+    const shuffledQuestions = shuffleArray([...original]);
+    return shuffledQuestions.map(q => {
+        const optionObjects = q.options.map((text, idx) => ({ text, originalLetter: String.fromCharCode(65 + idx) }));
+        shuffleArray(optionObjects);
+        const shuffledOptions = optionObjects.map(obj => obj.text);
+        const mapping = optionObjects.map(obj => obj.originalLetter);
+        const correctShuffledIndex = mapping.findIndex(letter => letter === q.correctLetter);
+        return { ...q, shuffledOptions, shuffledMapping: mapping, correctShuffledIndex };
+    });
+}
+
+function showRegistrationPage() { showPage('registration-page'); }
+
+// New access code generator: MPX-XXXYY (3 digits, 2 letters)
+function generateAccessCode() {
+    const digits = Math.floor(100 + Math.random() * 900);
+    const letters = String.fromCharCode(65 + Math.floor(Math.random()*26)) + String.fromCharCode(65 + Math.floor(Math.random()*26));
+    return `MPX-${digits}${letters}`;
+}
+
+function accessQuiz(inputCode) {
+    quizAccessErrorBox.style.display = 'none';
+    const storedStudentCode = localStorage.getItem('studentAccessCode');
+    if (inputCode === studentAccessCode || inputCode === "Student-001" || inputCode === DEV_ACCESS_CODE) {
+        showQuizNotification('Access Granted', 'Welcome! You can now start the quiz.', 'info');
+        startQuiz('MPX-001RB', 'Student', inputCode);
+    } else {
+        quizAccessErrorBox.style.display = 'block';
+    }
+}
+
+// ---------- NEW BACKEND INTEGRATION FUNCTIONS ----------
+function startQuizSession(accessCode, quizId) {
+    const payload = {
+        type: 'start_quiz',
+        accessCode: accessCode,
+        quizId: quizId
+    };
+    fetch(SHEET_SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+    }).catch(e => console.error('start_quiz error', e));
+}
+
+function sendLiveProgress() {
+    if (!studentAccessCode || !currentQuizId) return;
+    let correct = 0, incorrect = 0, unanswered = 0;
+    quizData.forEach((q, index) => {
+        const ans = userAnswers[index];
+        if (ans === null) unanswered++;
+        else if (ans === q.correctShuffledIndex) correct++;
+        else incorrect++;
+    });
+    const payload = {
+        type: 'live_progress',
+        accessCode: studentAccessCode,
+        quizId: currentQuizId,
+        correct: correct,
+        incorrect: incorrect,
+        unanswered: unanswered
+    };
+    fetch(SHEET_SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+    }).catch(e => console.error('live_progress error', e));
+}
+
+// ------------------------------------------------
+
+function startQuiz(quizId, userType, code) {
+    currentQuizId = quizId;
+    quizData = createShuffledQuiz(originalQuizData);
+    currentQuestion = 0;
+    userAnswers = Array(quizData.length).fill(null);
+    timeLeft = quizData.length * TIME_PER_MCQ;
+    localStorage.setItem('lastAccessCode', code);
+    showPage('quiz-page');
+    initQuiz();
+    startQuizSession(code, quizId);
+}
+
+function initQuiz() {
+    quizSubjectEl.textContent = QUIZ_SUBJECT;
+    document.getElementById('quiz-duration').textContent = Math.floor(quizData.length * TIME_PER_MCQ / 60);
+    websiteLinkEl.href = WEBSITE_LINK;
+    whatsappContactLinkEl.href = 'https://wa.me/' + WHATSAPP_CONTACT;
+    quizTitleEl.textContent = `Test - ID: ${currentQuizId}`;
+    renderQuestionNav();
+    renderQuestion();
+    if (totalTimeInterval) clearInterval(totalTimeInterval);
+    totalTimeInterval = setInterval(updateTotalTimer, 1000);
+}
+
+function updateTotalTimer() {
+    if (timeLeft > 0) { timeLeft--; const minutes = Math.floor(timeLeft/60); const seconds = timeLeft%60; totalTimerEl.textContent = `${String(minutes).padStart(2,'0')}:${String(seconds).padStart(2,'0')}`; }
+    else { clearInterval(totalTimeInterval); submitTest(true); }
+}
+
+function renderQuestionNav() {
+    questionNavEl.innerHTML = '';
+    quizData.forEach((_, index) => {
+        const navItem = document.createElement('div');
+        navItem.classList.add('question-nav-item');
+        navItem.textContent = index + 1;
+        navItem.onclick = () => navigateQuestion(index);
+        if (index === currentQuestion) navItem.classList.add('current');
+        else if (userAnswers[index] !== null) navItem.classList.add('solved');
+        else if (userAnswers.slice(0, index).some(ans => ans !== null) || index < currentQuestion) navItem.classList.add('visited');
+        questionNavEl.appendChild(navItem);
+    });
+    updateProgressBar();
+}
+
+function updateProgressBar() { const solvedCount = userAnswers.filter(a => a !== null).length; quizProgressEl.style.width = `${(solvedCount / quizData.length) * 100}%`; }
+
+function renderQuestion() {
+    reasoningEl.style.display = 'none'; reasoningBtn.classList.add('disabled');
+    const question = quizData[currentQuestion];
+    questionTextEl.textContent = `${currentQuestion + 1}. ${question.question}`;
+    optionsContainerEl.innerHTML = '';
+    question.shuffledOptions.forEach((opt, index) => {
+        const optionEl = document.createElement('div');
+        optionEl.classList.add('option');
+        optionEl.textContent = opt;
+        if (userAnswers[currentQuestion] !== null) {
+            optionEl.style.pointerEvents = 'none';
+            if (userAnswers[currentQuestion] === index) optionEl.classList.add('selected');
+        } else { optionEl.onclick = () => selectOption(index); }
+        optionsContainerEl.appendChild(optionEl);
+    });
+    renderQuestionNav();
+}
+
+function selectOption(optionIndex) {
+    userAnswers[currentQuestion] = optionIndex;
+    document.querySelectorAll('.option').forEach(opt => { opt.style.pointerEvents = 'none'; opt.classList.remove('selected'); });
+    const options = document.querySelectorAll('.option');
+    options[optionIndex].classList.add('selected');
+    reasoningBtn.classList.remove('disabled');
+    renderQuestionNav();
+    sendLiveProgress();
+}
+
+function toggleReasoning() {
+    if (reasoningBtn.classList.contains('disabled')) return;
+    const question = quizData[currentQuestion];
+    if (reasoningEl.style.display === 'block') reasoningEl.style.display = 'none';
+    else {
+        let html = `<strong>Correct answer explanation:</strong> ${question.reasoning}<br><br>`;
+        question.incorrectReasons.forEach((reason, i) => { if (reason) html += `<strong>Incorrect option ${String.fromCharCode(65 + i)}:</strong> ${reason}<br>`; });
+        reasoningTextEl.innerHTML = html;
+        reasoningEl.style.display = 'block';
+    }
+}
+
+function navigateQuestion(direction) {
+    let nextIndex;
+    if (typeof direction === 'number') nextIndex = direction;
+    else if (direction === 'next') nextIndex = (currentQuestion + 1) % quizData.length;
+    else if (direction === 'prev') nextIndex = (currentQuestion - 1 + quizData.length) % quizData.length;
+    else return;
+    if (nextIndex === currentQuestion) return;
+    currentQuestion = nextIndex;
+    renderQuestion();
+}
+
+function submitTest(isTimeout = false) {
+    if (!isTimeout && !confirm('Are you sure you want to submit the quiz?')) return;
+    clearInterval(totalTimeInterval);
+    let correct = 0, incorrect = 0, unanswered = 0;
+    quizData.forEach((q, index) => {
+        const ans = userAnswers[index];
+        if (ans === null) unanswered++;
+        else if (ans === q.correctShuffledIndex) correct++;
+        else incorrect++;
+    });
+    const totalQuestions = quizData.length;
+    const totalScore = (correct * MARK_PER_MCQ) - (incorrect * NEGATIVE_MARKING);
+    const totalMarks = totalQuestions * MARK_PER_MCQ;
+    const savedStudentData = JSON.parse(localStorage.getItem('studentData') || '{}');
+    const lastAccessCode = localStorage.getItem('lastAccessCode') || 'N/A';
+    
+    let studentInfoHtml = '';
+    for (const [key, value] of Object.entries(savedStudentData)) {
+        studentInfoHtml += `<tr><td>${key}</td><td>${value}</td></tr>`;
+    }
+    studentInfoHtml += `<tr><td>Access Code Used</td><td>${lastAccessCode}</td></tr>`;
+    studentInfoTable.innerHTML = studentInfoHtml;
+
+    if (lastAccessCode && lastAccessCode !== 'N/A') {
+        const resultsDataToSend = {
+            type: 'quiz_result',
+            accessCode: lastAccessCode,
+            quizId: currentQuizId,
+            totalQuestions,
+            correct,
+            incorrect,
+            unanswered,
+            totalScore,
+            totalMarks,
+            studentName: savedStudentData['Student Name'] || 'Unknown'
+        };
+        fetch(SHEET_SCRIPT_URL, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(resultsDataToSend)
+        }).catch(e => console.error(e));
+    }
+
+    showQuizNotification('Quiz Completed!', `Your score has been recorded.`, 'info');
+    showPage('results-page');
+}
+
+function restartTest() {
+    if (confirm('Restart full test? Current progress lost.')) {
+        quizData = createShuffledQuiz(originalQuizData);
+        currentQuestion = 0; userAnswers = Array(quizData.length).fill(null);
+        timeLeft = quizData.length * TIME_PER_MCQ;
+        showPage('quiz-page'); initQuiz();
+        if (studentAccessCode) startQuizSession(studentAccessCode, currentQuizId);
+    }
+}
+
+function viewHistoryPlaceholder() { showQuizNotification('History', 'Test history feature coming soon. (Backend ready)', 'info'); }
+function viewLeaderboardPlaceholder() { showQuizNotification('Leaderboard', 'Leaderboard feature coming soon. (Backend ready)', 'info'); }
+
+function showAllMcqsPage() { currentMcqPage = 0; renderAllMcqs(); showPage('all-mcqs-page'); }
+
+function renderAllMcqs() {
+    const start = currentMcqPage * mcqsPerPage;
+    const pageMcqs = originalQuizData.slice(start, start + mcqsPerPage);
+    allMcqsList.innerHTML = pageMcqs.map((q, idx) => {
+        const globalIdx = start + idx;
+        return `<div class="all-mcq-item"><div class="question-text">${globalIdx+1}. ${q.question}</div><div class="all-mcq-options">${
+            q.options.map((opt, optIdx) => `<div class="all-mcq-option ${optIdx === q.correctAnswer ? 'correct' : ''}">${String.fromCharCode(65+optIdx)}) ${opt}</div>`).join('')
+        }</div><div class="all-mcq-reasoning"><strong>Reasoning:</strong> ${q.reasoning}<br><strong>Incorrect reasons:</strong> ${q.incorrectReasons.filter(r=>r).join('; ')}</div></div>`;
+    }).join('');
+    const totalPages = Math.ceil(originalQuizData.length / mcqsPerPage);
+    document.getElementById('pageIndicator').textContent = `Page ${currentMcqPage+1} / ${totalPages}`;
+    document.getElementById('prevPageBtn').disabled = currentMcqPage === 0;
+    document.getElementById('nextPageBtn').disabled = currentMcqPage === totalPages - 1;
+}
+
+function changeMcqPage(delta) {
+    const totalPages = Math.ceil(originalQuizData.length / mcqsPerPage);
+    const newPage = currentMcqPage + delta;
+    if (newPage >= 0 && newPage < totalPages) { currentMcqPage = newPage; renderAllMcqs(); }
+}
+
+function handleRegistration() {
+    const sName = document.getElementById('studentName').value.trim();
+    const fName = document.getElementById('fatherName').value.trim();
+    const gender = document.getElementById('gender').value;
+    const email = document.getElementById('email').value.trim();
+    const mobile = document.getElementById('mobile').value.trim();
+    const city = document.getElementById('city').value.trim();
+    
+    if (!sName || !fName || !gender || !email || !mobile || !city) {
+        showQuizNotification('Registration Error', 'Please fill all details including gender.', 'error');
+        return;
+    }
+    
+    const generatedCode = generateAccessCode();
+    studentAccessCode = generatedCode;
+    studentData = {
+        'Student Name': sName, 'Father Name': fName, 'Gender': gender,
+        'Email': email, 'Mobile': mobile, 'City': city
+    };
+
+    const registrationDataToSend = {
+        type: 'registration',
+        accessCode: generatedCode,
+        studentName: sName,
+        fatherName: fName,
+        gender: gender,
+        email: email,
+        mobile: mobile,
+        city: city
+    };
+    fetch(SHEET_SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        body: JSON.stringify(registrationDataToSend)
+    }).catch(e => console.error(e));
+    
+    localStorage.setItem('studentAccessCode', generatedCode);
+    localStorage.setItem('studentData', JSON.stringify(studentData));
+    
+    const registrations = JSON.parse(localStorage.getItem('wcwRegistrations') || '[]');
+    registrations.push({ ...studentData, accessCode: generatedCode, timestamp: new Date().toISOString() });
+    localStorage.setItem('wcwRegistrations', JSON.stringify(registrations));
+    
+    showQuizNotification('Registration Successful', `Your MedPlex ID: ${generatedCode}`, 'info');
+    startQuiz('MPX-001RB', 'Student', generatedCode);
+}
+</script>
+</body>
+</html>
+                            
